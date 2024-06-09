@@ -29,31 +29,6 @@ for attempt in range(max_retries):
 else:
     raise Exception("No se pudo conectar a la base de datos después de varios intentos")
 
-"""
-try:
-    # Crear un cursor
-    cursor = conn.cursor()
-
-    # Definir la sentencia SQL para crear una tabla
-    create_table_query = '''
-    CREATE TABLE my_movies (
-        ID SERIAL PRIMARY KEY,
-        Autor VARCHAR(100),
-        Descripcion VARCHAR(100),
-        Fecha_Estreno VARCHAR(100)
-    );
-    '''
-
-    # Ejecutar la sentencia SQL para crear la tabla
-    cursor.execute(create_table_query)
-
-    # Confirmar los cambios
-    conn.commit()
-
-except Exception as e:
-    print(f"Error: {e}")
-"""
-
 
 class Movie(BaseModel):
     table_name: str
